@@ -1,46 +1,107 @@
 # Privacy Policy for ScanHUD
 
-**Last Updated:** January 28, 2026
+Last Updated: March 10, 2026
 
-**ScanHUD** ("we", "our", or "the extension") is a developer tool designed to extract text from browser content using Optical Character Recognition (OCR). We take user privacy seriously. This policy explains how ScanHUD handles data.
+ScanHUD (“we”, “our”, or “the extension”) is a developer tool designed to extract and analyze technical text (such as logs or console output) directly from the screen using Optical Character Recognition (OCR). We take user privacy seriously. This policy explains how ScanHUD handles data.
 
-## 1. No Data Collection
-ScanHUD does not collect, transmit, or sell personal information.
+1. No Personal Data Collection
 
-* We **do not** use analytics, tracking, advertising, or telemetry services.
-* We **do not** collect browsing history or monitor pages in the background.
-* ScanHUD only operates on the active browser tab when **explicitly triggered by the user**.
+ScanHUD does not collect, store, sell, or share personal information.
 
-## 2. Local OCR Processing
-All OCR processing is performed **locally on your device**.
+We do not use:
 
-* When you select an area to scan, a temporary screenshot of that area is created in the browser’s memory.
-* The image is processed locally using **Tesseract.js** (WebAssembly).
-* **No images, extracted text, or metadata are uploaded to any external server.**
-* Once processing is complete, the image data is discarded from memory.
+advertising networks
 
-## 3. Local Storage
-ScanHUD stores limited data locally on your device:
+tracking services
 
-* **Recent scan history** (extracted text and timestamps) is saved using `chrome.storage.local`.
-* This data remains on your machine and is not synced to Google servers or accessible by us.
-* You can clear this data at any time via the extension settings or by clearing browser extension data.
+behavioral analytics
 
-## 4. Permissions Usage
-ScanHUD requires the following browser permissions to function:
+background monitoring of browsing activity
 
-* **`activeTab`**: Used only after explicit user interaction (clicking the extension icon or button) to capture the visible area of the current tab for OCR.
-* **`scripting`**: Used to inject a lightweight selection overlay (HUD) into the active page so the user can choose the scan area.
-* **`offscreen`**: Used to run the OCR engine in an isolated offscreen context to avoid blocking or slowing down the main browsing experience.
-* **`storage`**: Used to store scan history and user preferences locally on the device.
+The extension only operates on the active browser tab when explicitly triggered by the user.
 
-## 5. Third-Party Libraries
-ScanHUD uses **Tesseract.js**, an open-source OCR engine.
+2. Local OCR Processing
 
-* Tesseract.js is bundled with the extension and executed locally.
-* It does not transmit data externally or communicate with third-party services.
+All OCR processing is performed locally on your device.
 
-## 6. Contact
-If you have questions about this Privacy Policy or ScanHUD’s data handling practices, please contact us via our email:
+When you select an area to scan:
+
+a temporary screenshot of the selected region is created in the browser’s memory
+
+the image is processed locally using Tesseract.js (WebAssembly)
+
+extracted text is generated locally in the browser
+
+No screenshots, extracted text, or metadata are uploaded to external servers.
+
+Once processing is complete, the image data is discarded from memory.
+
+3. Optional AI Analysis (BYOK)
+
+ScanHUD provides an optional AI analysis feature to help interpret extracted text such as logs or error messages.
+
+This feature uses a Bring Your Own Key (BYOK) model:
+
+users may optionally provide their own OpenAI API key
+
+AI analysis is performed by sending selected text directly to the OpenAI API
+
+ScanHUD does not proxy, store, or process these requests on its own servers
+
+Only the text explicitly chosen by the user for analysis is sent to the OpenAI API.
+
+Users are responsible for reviewing and complying with the OpenAI Privacy Policy and Terms of Service when using this feature.
+
+AI analysis is entirely optional and disabled unless the user explicitly configures an API key.
+
+4. Local Storage
+
+ScanHUD stores limited data locally on the user’s device.
+
+This may include:
+
+recent scan history (extracted text and timestamps)
+
+extension settings and preferences
+
+user-provided OpenAI API key (if configured)
+
+This information is stored using chrome.storage.local and remains on the user's device.
+
+ScanHUD does not sync this data to external servers.
+
+Users can clear this data at any time through extension settings or by clearing browser extension data.
+
+5. Permissions Usage
+
+ScanHUD requires the following browser permissions:
+
+activeTab
+Used only after explicit user interaction to capture the visible area of the active tab for OCR.
+
+scripting
+Used to inject a lightweight overlay interface (HUD) so the user can select the area to scan.
+
+offscreen
+Used to run the OCR engine in an isolated context to avoid blocking the main browser thread.
+
+storage
+Used to store local preferences, scan history, and optional API key configuration.
+
+6. Third-Party Components
+
+ScanHUD includes the following third-party components:
+
+Tesseract.js
+Open-source OCR engine bundled with the extension and executed locally.
+
+OpenAI API (optional)
+Used only when the user enables AI analysis and provides their own API key.
+
+ScanHUD does not operate or manage any backend service for AI processing.
+
+7. Contact
+
+If you have questions about this Privacy Policy or ScanHUD’s data handling practices, please contact:
 
 alex.stelmakh@protonmail.com
