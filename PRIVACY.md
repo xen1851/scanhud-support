@@ -83,8 +83,8 @@ Users can clear this data at any time through extension settings or by clearing 
 
 ScanHUD requires the following browser permissions:
 
-**activeTab**  
-Used only after explicit user interaction to capture the visible area of the active tab for OCR.
+**host_permissions (<all_urls>)**  
+Required to capture the visible area of the active tab for OCR. Although the permission covers all URLs, ScanHUD only interacts with the page content when you explicitly click the "Scan" button in the side panel.
 
 **scripting**  
 Used to inject a lightweight overlay interface (HUD) so the user can select the area to scan.
